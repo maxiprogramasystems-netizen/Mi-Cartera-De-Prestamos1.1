@@ -26,7 +26,8 @@ Aplicación web para controlar una cartera de préstamos: clientes, intereses, c
 index.html              La app completa (HTML, CSS y JS)
 manifest.webmanifest    Datos para instalarla como app
 sw.js                   Funcionamiento sin conexión
-icons/                  Logo de la app (192, 512 y maskable)
+screenshots/            Capturas para el diálogo de instalación
+icons/                  Icono de la app: 1024 transparente (3D), 512, 192, maskable, favicon y apple-touch
 ```
 
 ## Actualizaciones futuras
@@ -41,3 +42,14 @@ icons/                  Logo de la app (192, 512 y maskable)
 - La contraseña protege el acceso en el dispositivo; no cifra los datos ni los respaldos.
 - Los avisos de cobro se muestran mientras la app está abierta o instalada; no hay servidor que envíe mensajes con la app cerrada.
 - Verifica que la tasa de interés no supere el límite legal (usura) vigente en tu país.
+
+## Instalar como app (computador, Android, iPhone)
+
+La instalación solo funciona abriendo la dirección https publicada en GitHub Pages; si abres `index.html` desde el disco no se puede instalar.
+
+- Computador (Chrome o Edge): icono de instalar en la barra de direcciones, o menú > Instalar "Préstamos y Cobros". También hay un botón "Instalar app" dentro de la app (Panel y Ajustes).
+- Android: menú > Instalar app.
+- iPhone: Compartir > Agregar a pantalla de inicio.
+- Si ya la tenías instalada con otro icono, desinstálala y vuelve a instalarla para que tome el nuevo.
+
+El icono principal es `icons/icon-1024.png` (PNG 1024×1024, fondo transparente, efecto 3D).
