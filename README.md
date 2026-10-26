@@ -29,7 +29,7 @@ index.html              La app completa (HTML, CSS y JS)
 manifest.webmanifest    Datos para instalarla como app
 sw.js                   Funcionamiento sin conexión
 favicon.ico             Icono de la pestaña
-icon-*.png              Icono de la app (48 a 2048 px, transparente), maskable y apple-touch
+icon-*.png              Icono de la app (32 a 2048 px, PNG transparente), maskable y apple-touch
 screenshot-*.png        Capturas para el diálogo de instalación
 ```
 
@@ -56,4 +56,4 @@ La instalación solo funciona abriendo la dirección https publicada en GitHub P
 - En Ajustes > "Diagnóstico de instalación" ves qué falta si no deja instalar.
 - Si ya la tenías instalada con otro icono, desinstálala y vuelve a instalarla.
 
-Icono maestro: `icon-2048.png` (transparente). Para cambiar el logo, reemplaza los `icon-*.png` y sube el número `v` en `sw.js`, `manifest.webmanifest` e `index.html`.
+Icono maestro: `icon-2048.png` (PNG transparente). Para cambiar el logo, reemplaza los `icon-*.png`, el icono incrustado en `index.html` (constante `IC`) y sube el número `v` en `sw.js`, `manifest.webmanifest` e `index.html`.
