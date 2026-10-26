@@ -1,5 +1,5 @@
 /* Sube el número de V cuando publiques una versión nueva para refrescar la caché */
-const V='cartera-v8',F=["./", "index.html", "manifest.webmanifest", "favicon.ico", "icons/icon-16.png", "icons/icon-32.png", "icons/icon-48.png", "icons/icon-72.png", "icons/icon-96.png", "icons/icon-128.png", "icons/icon-144.png", "icons/icon-192.png", "icons/icon-256.png", "icons/icon-384.png", "icons/icon-512.png", "icons/icon-1024.png", "icons/icon-maskable-192.png", "icons/icon-maskable-512.png", "icons/favicon-64.png", "icons/apple-touch-icon.png"];
-self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(F)).then(()=>self.skipWaiting()))});
+const V='cartera-v9',F=["./", "index.html", "manifest.webmanifest", "favicon.ico", "icon-32.png", "icon-48.png", "icon-192.png", "icon-512.png", "icon-maskable-192.png", "icon-maskable-512.png", "apple-touch-icon.png"];
+self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>Promise.all(F.map(u=>c.add(u).catch(()=>null)))).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==V).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
-self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;e.respondWith(fetch(e.request).then(r=>{const c=r.clone();caches.open(V).then(x=>x.put(e.request,c));return r}).catch(()=>caches.match(e.request)))});
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;e.respondWith(fetch(e.request).then(r=>{if(r&&r.status===200){const c=r.clone();caches.open(V).then(x=>x.put(e.request,c))}return r}).catch(()=>caches.match(e.request,{ignoreSearch:true})))});

@@ -22,13 +22,15 @@ Aplicación web para controlar una cartera de préstamos: clientes, intereses, c
 
 ## Estructura
 
+**Todos los archivos van sueltos en la raíz del repositorio, sin carpetas.** Es importante que `index.html`, `manifest.webmanifest`, `sw.js`, `favicon.ico` y todos los `icon-*.png` estén juntos; si falta alguno, el navegador no deja instalar la app.
+
 ```
 index.html              La app completa (HTML, CSS y JS)
 manifest.webmanifest    Datos para instalarla como app
-favicon.ico             Icono de la pestaña del navegador
 sw.js                   Funcionamiento sin conexión
-screenshots/            Capturas para el diálogo de instalación
-icons/                  Icono de la app en todos los tamaños (16 a 2048 px, transparente), maskable y apple-touch
+favicon.ico             Icono de la pestaña
+icon-*.png              Icono de la app (48 a 2048 px, transparente), maskable y apple-touch
+screenshot-*.png        Capturas para el diálogo de instalación
 ```
 
 ## Actualizaciones futuras
@@ -46,11 +48,12 @@ icons/                  Icono de la app en todos los tamaños (16 a 2048 px, tra
 
 ## Instalar como app (computador, Android, iPhone)
 
-La instalación solo funciona abriendo la dirección https publicada en GitHub Pages; si abres `index.html` desde el disco no se puede instalar.
+La instalación solo funciona abriendo la dirección https publicada en GitHub Pages; si abres `index.html` desde el disco no se puede instalar. Los navegadores no permiten instalar sin que la persona toque un botón, por eso la app muestra un aviso "Instalar" con un toque.
 
-- Computador (Chrome o Edge): icono de instalar en la barra de direcciones, o menú > Instalar "Préstamos y Cobros". También hay un botón "Instalar app" dentro de la app (Panel y Ajustes).
-- Android: menú > Instalar app.
+- Computador (Chrome o Edge): botón "Instalar" del aviso, icono de instalar en la barra de direcciones, o menú > Instalar "Préstamos y Cobros".
+- Android: botón "Instalar" del aviso, o menú > Instalar app.
 - iPhone: Compartir > Agregar a pantalla de inicio.
-- Si ya la tenías instalada con otro icono, desinstálala y vuelve a instalarla para que tome el nuevo.
+- En Ajustes > "Diagnóstico de instalación" ves qué falta si no deja instalar.
+- Si ya la tenías instalada con otro icono, desinstálala y vuelve a instalarla.
 
-El icono maestro es `icons/icon-2048.png` (PNG 2048×2048, fondo transparente, efecto 3D); de él salen todos los demás tamaños. Para cambiar el logo, reemplaza esos archivos y sube el número `v` en `sw.js`, `manifest.webmanifest` e `index.html`.
+Icono maestro: `icon-2048.png` (transparente). Para cambiar el logo, reemplaza los `icon-*.png` y sube el número `v` en `sw.js`, `manifest.webmanifest` e `index.html`.
