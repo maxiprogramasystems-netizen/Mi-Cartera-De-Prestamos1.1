@@ -25,9 +25,10 @@ Aplicación web para controlar una cartera de préstamos: clientes, intereses, c
 ```
 index.html              La app completa (HTML, CSS y JS)
 manifest.webmanifest    Datos para instalarla como app
+favicon.ico             Icono de la pestaña del navegador
 sw.js                   Funcionamiento sin conexión
 screenshots/            Capturas para el diálogo de instalación
-icons/                  Icono de la app: 1024 transparente (3D), 512, 192, maskable, favicon y apple-touch
+icons/                  Icono de la app en todos los tamaños (16 a 2048 px, transparente), maskable y apple-touch
 ```
 
 ## Actualizaciones futuras
@@ -52,4 +53,4 @@ La instalación solo funciona abriendo la dirección https publicada en GitHub P
 - iPhone: Compartir > Agregar a pantalla de inicio.
 - Si ya la tenías instalada con otro icono, desinstálala y vuelve a instalarla para que tome el nuevo.
 
-El icono principal es `icons/icon-1024.png` (PNG 1024×1024, fondo transparente, efecto 3D).
+El icono maestro es `icons/icon-2048.png` (PNG 2048×2048, fondo transparente, efecto 3D); de él salen todos los demás tamaños. Para cambiar el logo, reemplaza esos archivos y sube el número `v` en `sw.js`, `manifest.webmanifest` e `index.html`.
